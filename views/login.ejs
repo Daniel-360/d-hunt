@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign in</title>
+    <link rel="stylesheet" href="public/style.css">
+</head>
+<body>
+    <div class="login-page">
+        <%- include('partials/header.ejs') %>
+        <div class="form-wrapper">
+            <div class="form-head">
+                <h1>sign in</h1>
+                <!-- <p>hall of fame</p> -->
+            </div>
+            <div class="form-body">
+                <form id="loginForm">
+                    
+                    <label for="email">email <input type="email" name="email" id="email" placeholder="janedoe@gmail.com" required></label>
+                    <label for="password">password <input type="password" name="password" id="password" placeholder="*********" required></label>
+                    <button id="submit" type="submit">sign in</button>
+                    <% if (message != null) { %>
+                        <p class="error-message"><%= message %></p>
+                    <% } %>
+                </form>
+                <div class="added-link">
+                    <a href="/login/signUp" class="sign-up">sign up</a>
+                    <a href="/forgetPassword" class="forget-pass">forget password</a>    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="../public/javascript/signIn.js"></script>
+</body>
+</html>

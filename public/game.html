@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bet contestant</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            width: 100vw;
+            min-height: 100vh;
+            background-color: #fff;
+        }
+
+        .head{
+            width: 100%;
+            height: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: crimson;
+        }
+
+        .head h2{
+            color: white;
+            text-transform: capitalize;
+            font-weight: 500;
+        }
+        .body{
+            width: 100%;
+        }
+
+        .body-head{
+            width: 100%;
+            /* display: flex; */
+        }
+
+        
+    </style>
+</head>
+<body>
+    <!-- demo page for bet -->
+    <section>
+        <div class="head">
+            <h2>predict on contestant and earn</h2>
+        </div>
+        <div class="body">
+            <div class="body-head">
+                <table>
+                    <thead>
+                        <th>con name</th>
+                        <th>market</th>
+                        <th>o/u</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th style="display: flex; align-items: center;">
+                                <div class="dp" style="width: 2.5rem; height: 2.5rem; position: relative;"><img src="/images/joshua-1.jpg" alt="team-img" style="height: 100%; width: 100%; border-radius: 7px;"></div>
+                                <div class="name">
+                                    <h4>josh-king</h4>
+                                    <h5>10.3k <span>4th</span></h5>
+                                    <h6></h6>
+                                </div>
+                            </th>
+                            <td>
+                                <div class="oddh">
+                                    <h4>over/under</h4>
+                                </div>
+                                <div class="odd-box" style="display: flex;">
+                                    <div><h6>+10</h6></div>
+                                    <div><h6>+15</h6></div>
+                                    <div><h6>+20</h6></div>
+                                </div>
+                                <!-- <div class="odd3"></div> -->
+                            </td>
+                            <td>
+                                <div style="width: 2.5rem; height: 2.5rem;
+                                display: flex; justify-content: center; align-items: center;
+                                background-color: crimson; color: white; cursor: pointer; text-transform: capitalize;">all</div>
+                            </td> 
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- <h3>contestant names</h3>
+                <h3>market</h3> -->
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up</title>
+    <link rel="stylesheet" href="public/style.css">
+</head>
+<body>
+    <div class="login-page">
+        <%- include('../partials/header.ejs') %>
+        <div class="form-wrapper">
+            <div class="form-head">
+                <h1>sign up</h1>
+                <!-- <p>hall of fame</p> -->
+            </div>
+            <div class="form-body">
+                <form action="/login/signUp" method="post">
+                    
+                    <label for="email">email <input type="email" name="email" id="email" placeholder="janedoe@gmail.com" required></label>
+                    <label for="tel">phone number <input type="tel" name="tel" id="tel"></label>
+                    <label for="password">password <input type="password" name="password" id="password" placeholder="*********" required></label>
+                    <label for="confirmPassword">confirm password <input type="Password" name="confirmPass" required></label>
+                    <button type="submit">next</button>
+                    <% if (message != null) { %>
+                        <p class="error-message"><%= message %></p>
+                    <% } %>
+                    <!-- password for my router -->
+                    <!-- 02987677 -->
+                    <!-- web ip == airtel.home -->
+                    <!-- password admin -->
+                </form>
+                <div class="added-link">
+                    <a href="/login/login" class="sign-in">sign in</a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

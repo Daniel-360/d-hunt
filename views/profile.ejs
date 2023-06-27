@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile page</title>
+    <link rel="stylesheet" href="public/style.css">
+</head>
+<body>
+    <div class="profile-page">
+        <div class="head">
+            <div class="cover-img">
+                <div class="back-btn"></div>
+                <div class="username">
+                    <h1><%= data.username %> page</h1>
+                </div>
+            </div>
+            <div class="pro-img">
+                <div class="img"></div>
+                <div class="followers-details">
+                    <div class="followers">
+                        <h3>followers</h3>
+                        <h4>4.3m</h4>
+                    </div>
+                    <div class="followers">
+                        <h3>following</h3>
+                        <h4>10k</h4>
+                    </div>
+                    <div class="followers">
+                        <h3>voted</h3>
+                        <h4>40%</h4>
+                    </div>
+                    <div class="follow-btn">follow</div>
+                    <div class="vote-btn">vote</div>z
+                </div>
+                <div class="about">
+                    <div class="about-head">
+                        <h2>tracks</h2>
+                        <div class="favorite-icon">
+                            <div class="favorite">F</div>
+                        </div>
+                    </div>
+                    <div class="about-body">
+                        <div class="track-list">
+                            <h3><%= data.username %> <span>love</span></h3>
+                            <div class="btn-wrapper">
+                                <div class="btn">p</div>
+                                <div class="btn">f</div>
+                            </div>
+                        </div>
+                        <div class="track-list">
+                            <h3><%= data.username %> <span>magicians</span></h3>
+                            <div class="btn-wrapper">
+                                <div class="btn">p</div>
+                                <div class="btn">f</div>
+                            </div>
+                        </div>
+                        <div class="track-list">
+                            <h3><%= data.username %> <span>sunset</span></h3>
+                            <div class="btn-wrapper">
+                                <div class="btn">p</div>
+                                <div class="btn">f</div>
+                            </div>
+                        </div>
+                        <div class="track-list">
+                            <h3><%= data.username %> <span>am lock here</span></h3>
+                            <div class="btn-wrapper">
+                                <div class="btn">p</div>
+                                <div class="btn">f</div>
+                            </div>
+                        </div>
+                        <div class="track-list">
+                            <h3><%= data.username %> <span>musky</span></h3>
+                            <div class="btn-wrapper">
+                                <div class="btn">p</div>
+                                <div class="btn">f</div>
+                            </div>
+                        </div>
+                        <div class="track-list">
+                            <h3><%= data.username %> <span>love</span></h3>
+                            <div class="btn-wrapper">
+                                <div class="btn">p</div>
+                                <div class="btn">f</div>
+                            </div>
+                        </div>
+                        <div class="track-list">
+                            <a href="#">more tracks</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="media-wrapper">
+                <div class="media">
+                    <a href="/" class="each-media media-selected">feed</a>
+                    <a href="" class="each-media">gallery</a>
+                    <a href="" class="each-media">audios</a>
+                    <a href="" class="each-media">videos</div>
+                </div>
+            </div>
+        </div>
+        <div class="body">
+            <div class="user-feed">
+                <div class="left">home</div>
+                <div class="mid">
+                    <div class="user-post-wrap">
+                        <div class="post-head">
+                            <div class="dp"></div>
+                            <div class="user-name">
+                                <h2><%= data.username %></h2>
+                            </div>
+                            <div class="post-time">11:23</div>
+                            <div class="post-menu">m</div>
+                        </div>
+                        <div class="post-body">
+                            <div class="post-title">
+                                <h2>post title</h2>
+                                <p>brief sub-head optional</p>
+                            </div>
+                            <div class="post">
+                                <p>this is the body of the post and evey details it entails</p>
+                                <div class="post-media">bgc</div>
+                            </div>
+                            <div class="post-reactions">
+                                <a href="">like</a>
+                                <a href="">comment</a>
+                                <a href="">share</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="div-sides">
+                </div>
+            </div>
+            <div class="user-gallery"></div>
+            <div class="user-tracks"></div>
+            <div class="user-vid"></div>
+        </div>
+    </div>
+</body>
+</html>

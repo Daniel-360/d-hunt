@@ -1,0 +1,16 @@
+<div class="section-head">
+    <div class="title">
+        <a href="/">
+            <h1>D JOURNEY</h1></div>
+        </a>
+    <div class="nav">
+        <a href="/about">about</a>
+        <a href="/media">media</a>
+        <a href="/help">help</a>
+        <% if (data.username != null) { %>
+            <a href="/login/logout">Logout</a>
+        <% } else{%>
+            <a href="/login/login">Sign in</a>
+        <%}%> 
+    </div>
+</div>
