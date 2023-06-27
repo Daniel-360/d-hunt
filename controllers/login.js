@@ -2,40 +2,7 @@
 let userData = require('../model/userData')
 let users = require('../model/userSchema')
 
-exports.demoLogin = (req, res) => {
-    req.session.isLogin = 0; // asignin value 0 to session if not login
-    // req.session.error = null
-    if (req.session.isLogin != 0) {
-        // res.send('user already logged in')
-        req.session.error = 'user is already login'
-        res.redirect('/login/login')
-    } else {
-        // req.session.isLogin = 1;
-        let user = userData.find((user) => user.email === req.body.email)
-
-        if (!user) {
-            req.session.error = 'not a user pls sign up below'
-            res.redirect('/login')
-            // req.session.isLogin = 0
-        } else {
-            if (user.password !== req.body.password) {
-                req.session.error = 'incorrect password'
-                res.redirect('/login/login')
-            } else {
-                req.session.isLogin = 1
-                req.session.error = null
-                req.session.username = user.username
-                req.session.email = user.email
-                req.session.password = user.password
-                req.session.role = user.role
-                // res.redirect('login/home')
-                res.send('backend working')
-            }
-        }
-    }
-}
-
-
+// sign in authentication below
 exports.checkLogin = (req, res) => {
     req.session.isLogin = 0
 
@@ -62,6 +29,7 @@ exports.checkLogin = (req, res) => {
         })
 }
 
+// sign up authentication below using mongo db
 exports.signUp = (req, res) => {
     req.session.isLogin = 0
     // const {email, tel, password, confirmPass} = req.body
@@ -95,8 +63,4 @@ exports.signUp = (req, res) => {
         req.session.error = 'password not the same'
         res.send('/login/signUp')
     }
-
 }
-
-
-
