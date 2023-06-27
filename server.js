@@ -4,6 +4,8 @@ const path = require('path')
 const app = express()
 const port = 4000
 const engine = require("ejs-mate");
+require('dotenv').config()
+
 
 
 const session = require('express-session')
