@@ -7,11 +7,11 @@ const auth = require('../../middle-ware/auth')
 app.use('/public', express.static('public'))
 
 app.get('/login', (req, res)=>{
-    res.render('login', {data: req.session || null, message: req.session.error})
+    res.render('login', {data: req.session, message: req.session.error || null})
 })
 
 app.get('/signUp', (req, res)=>{
-    res.render('signUp/email', {data: req.session || null, message: req.session.error})
+    res.render('signUp/email', {data: req.session, message: req.session.error})
 })
 
 app.get('/logout', auth.checkUser, (req, res)=>{

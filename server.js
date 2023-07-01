@@ -6,8 +6,6 @@ const port = 4000
 const engine = require("ejs-mate");
 require('dotenv').config()
 
-
-
 const session = require('express-session')
 app.use(session({
     secret: 'secret-key',
@@ -35,6 +33,7 @@ app.get('/', (req, res)=>{
         data: req.session || null,
         message: req.session.error,
     })
+    console.log(req.session.isLogin);
     // res.sendFile(__dirname + '../public/blog.html')
 })
 

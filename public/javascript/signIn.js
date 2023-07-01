@@ -14,17 +14,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     // Set the request header
     xhr.setRequestHeader('Content-Type', 'application/json');
 
-    // Set the callback function for when the request completes
-    xhr.onload = function() {
-      if (xhr.status === 200) {
-        let data = xhr.response;
-        console.log(data);
-        window.location = data;
-        console.log('Data sent successfully');
-      } else {
-        console.error('Error sending data');
-      }
-    };
+    
 
     // Prepare the data to send
     const data = JSON.stringify({ password: password, email: email });
@@ -32,8 +22,14 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     // Send the request with the data
     xhr.send(data);
 
-    let response = xhr.responseType;
-    console.log(response);
+    // Set the callback function for when the request completes
+    xhr.onload = function() {
+        let daTa = xhr.responseText;
+        console.log(daTa);
+        window.location = daTa;
+        console.log('Data sent successfully');
+        return
+      } 
   });
 
 

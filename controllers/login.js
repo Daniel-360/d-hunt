@@ -1,4 +1,5 @@
 // authentication function is here
+const { request } = require('http')
 let userData = require('../model/userData')
 let users = require('../model/userSchema')
 
@@ -9,20 +10,24 @@ exports.checkLogin = (req, res) => {
     users.findOne({ email: req.body.email })
         .then((users) => {
             if (!users) {
-                res.send('not a user pls sign up')
-            } else {
-
-                if (users.password !== req.body.password) {
-                    req.session.error = 'incorrect password'
-                    res.redirect('/login/login')
-                }
-                req.session.isLogin = 1
-                req.session.email = req.body.email
-                req.session.role = users.role
-                req.session.tel = users.tel
-                res.send('/login/home')
+                req.session.error = 'not a user'
+                res.send('/login/login')
+                return
             }
 
+
+            if (users.password !== req.body.password) {
+                req.session.error = 'incorrect password'
+                res.send('/login/login')
+                return
+            }
+            req.session.isLogin = 1
+            req.session.email = req.body.email
+            req.session.role = users.role
+            req.session.tel = users.tel
+            req.session.username = req.body.username
+            req.session.surname = req.body.surname
+            res.send('/login/home')
         })
 }
 
@@ -38,19 +43,28 @@ exports.signUp = (req, res) => {
         users.exists({ email: req.body.email })
             .then((exists) => {
                 if (exists) {
-                    res.send('email already exist pls sign in');
+                    req.session.error = 'email already exist'
+                    res.send('/login/signUp');
                 }
                 // Create a new user
                 let newUser = new users({
                     email: req.body.email,
                     tel: req.body.tel,
                     password: req.body.password,
+                    name: req.body.username,
+                    surname: req.body.surname,
                     role: 'user'
                 })
                 // Save the user to the database
                 return newUser.save();
             })
             .then(() => {
+                req.session.isLogin = 1
+            req.session.email = req.body.email
+            req.session.role = users.role
+            req.session.tel = users.tel
+            req.session.username = req.body.username
+            req.session.surname = req.body.surname
                 res.redirect('/login/home');
             })
             .catch((error) => {
@@ -58,6 +72,6 @@ exports.signUp = (req, res) => {
             });
     } else {
         req.session.error = 'password not the same'
-        res.send('/login/signUp')
+        res.redirect('/login/signUp')
     }
 }

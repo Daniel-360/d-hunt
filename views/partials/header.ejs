@@ -7,7 +7,7 @@
         <a href="/about">about</a>
         <a href="/media">media</a>
         <a href="/help">help</a>
-        <% if (data.username != null) { %>
+        <% if (data.isLogin == 1) { %>
             <a href="/login/logout">Logout</a>
         <% } else{%>
             <a href="/login/login">Sign in</a>

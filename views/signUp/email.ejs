@@ -16,8 +16,12 @@
                 <!-- <p>hall of fame</p> -->
             </div>
             <div class="form-body">
+                <% if (message != null) { %>
+                    <p class="error-message"><%= message %></p>
+                <% } %>
                 <form action="/login/signUp" method="post">
-                    
+                    <label for="email">name <input type="text" name="username" id="username" placeholder="jane" required></label>
+                    <label for="email">surname <input type="text" name="surname" id="surname" placeholder="doe" required></label>
                     <label for="email">email <input type="email" name="email" id="email" placeholder="janedoe@gmail.com" required></label>
                     <label for="tel">phone number <input type="tel" name="tel" id="tel"></label>
                     <label for="password">password <input type="password" name="password" id="password" placeholder="*********" required></label>
