@@ -20,10 +20,7 @@ exports.checkLogin = (req, res) => {
                 req.session.email = req.body.email
                 req.session.role = users.role
                 req.session.tel = users.tel
-                console.log(users);
-                // res.redirect('/login/home')
                 res.send('/login/home')
-                // res.send('backend working')
             }
 
         })

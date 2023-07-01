@@ -17,11 +17,6 @@ app.use(session({
 
 require('./config/mongo')
 
-app.use(function(req, res, next) {
-    res.setHeader('Content-Security-Policy', 'default-src http://localhost:4000');
-    next();
-  });
-
 app.use('/public', express.static('public'))
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.json())
