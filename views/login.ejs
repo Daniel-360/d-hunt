@@ -16,10 +16,10 @@
                 <!-- <p>hall of fame</p> -->
             </div>
             <div class="form-body">
-                <form id="loginForm">
+                <form method="post" action="/login/login">
                     
-                    <label for="email">email <input type="email" name="email" id="email" placeholder="janedoe@gmail.com" required></label>
-                    <label for="password">password <input type="password" name="password" id="password" placeholder="*********" required></label>
+                    <label for="email">email <input type="email" name="email" id="email" placeholder="janedoe@gmail.com"  value="" required></label>
+                    <label for="password">password <input type="password" name="password" id="password" placeholder="*********" value="" required></label>
                     <button id="submit" type="submit">sign in</button>
                     <% if (message != null) { %>
                         <p class="error-message"><%= message %></p>
@@ -33,6 +33,9 @@
             </div>
         </div>
     </div>
-    <script src="../public/javascript/signIn.js"></script>
+    <script>
+
+    </script>
+    <script src="../public/javascript/login.js"></script>
 </body>
 </html>

@@ -3,4 +3,7 @@ Written and managed by dan
 
 ## Installation
 
-    npm i
+    run npm to install node modules
+    link ur db
+    i will be dropping admin login when am done 
+    and it actually private

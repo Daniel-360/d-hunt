@@ -11,14 +11,14 @@ exports.checkLogin = (req, res) => {
         .then((users) => {
             if (!users) {
                 req.session.error = 'not a user'
-                res.send('/login/login')
+                res.redirect('/login/login')
                 return
             }
 
 
             if (users.password !== req.body.password) {
                 req.session.error = 'incorrect password'
-                res.send('/login/login')
+                res.redirect('/login/login')
                 return
             }
             req.session.isLogin = 1
@@ -27,7 +27,7 @@ exports.checkLogin = (req, res) => {
             req.session.tel = users.tel
             req.session.username = req.body.username
             req.session.surname = req.body.surname
-            res.send('/login/home')
+            res.redirect('/login/home')
         })
 }
 
